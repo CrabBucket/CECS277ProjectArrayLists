@@ -2,7 +2,7 @@
  * <h1>War Game</h1>
  * Contains the players and rules necessary to simulate the card game War.
  * 
- * @author Alexander
+ * @author Alexander Dung
  * @version 1.0
  * @since 2019-09-08
  * 
