@@ -80,8 +80,8 @@ public class Game {
 		}
 		if(evaluateGameState() == 1) System.out.println(player1.getName() + " has all the cards, and therefore has won the game.");
 		else System.out.println(player2.getName() + " has all the cards, and therefore has won the game.");
-		System.out.println(player1.getHandSize());
-		System.out.println(player2.getHandSize());
+		System.out.println(player1.getName() + "'s Deck contains " + player1.getHandSize() + " cards.");
+		System.out.println(player2.getName() + "'s Deck contains " + player2.getHandSize() + " cards.");
 	}
 	
 	/**
@@ -137,18 +137,22 @@ public class Game {
 	 * @return a boolean representing which Player won the War, where true represents player1 and false represents player2
 	 */
 	public boolean wageWar() {
-		if(player1.getHandSize() < 4)return false;
-		else if(player2.getHandSize() < 4)return true;
-		for(int counter = 0; counter < 2; counter++) {
+		for(int counter = 0; counter < 3; counter++) {
+			if(player1.getHandSize() == 0) return false;
 			Card warCard1 = player1.draw(false);
 			this.warPile.add(warCard1);
 			System.out.println(player1.getName() + " draws a war card: " + warCard1);
+			if(player2.getHandSize() == 0) return true;
 			Card warCard2 = player2.draw(false);
 			this.warPile.add(warCard2);
 			System.out.println(player2.getName() + " draws a war card: " + warCard2);
 		}
+		if(player1.getHandSize() == 0) return false;
 		Card warDecider1 = player1.draw(true);
+		System.out.println(player1.getName() + " draws a war decider: " + warDecider1);
+		if(player2.getHandSize() == 0) return true;
 		Card warDecider2 = player2.draw(true);
+		System.out.println(player2.getName() + " draws a war decider: " + warDecider2);
 		warPile.add(warDecider1);
 		warPile.add(warDecider2);
 		int warDecision = warDecider1.compareTo(warDecider2);
