@@ -32,6 +32,7 @@ public class Game {
 	 * @param deckSize the number of Cards to instantiate the Deck with.
 	 */
 	public Game(int deckSize) {
+		this.warPile = new Hand("War Pile");
 		this.gameDeck = new Deck(deckSize);
 		this.gameDeck.shuffle();
 		Hand[] hands = gameDeck.deal(2);
@@ -47,6 +48,7 @@ public class Game {
 	 * @param deckSize the number of Cards to instantiate the Deck with
 	 */
 	public Game(String player1Name, String player2Name, int deckSize) {
+		this.warPile = new Hand("War Pile");
 		this.gameDeck = new Deck(deckSize);
 		this.gameDeck.shuffle();
 		Hand[] hands = gameDeck.deal(2);
