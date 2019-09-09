@@ -3,7 +3,7 @@
  * A card player who stores their own "Hand"
  * (in the case of War, a Hand consisting of their half of the game Deck), and stores their name.
  * 
- * @author Alexander
+ * @author Alexander Dung
  * @version 1.0
  * @since 2019-09-07
  * 
